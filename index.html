@@ -1,0 +1,101 @@
+​<!doctype html>
+<html> 
+    <head>
+	<h1> Razer Products</h1>
+    <title>Razer Products</title>
+
+    <style>
+        img{
+            width:300px;
+        }
+        input{
+            width:90px;
+        }
+        body { 
+			background-color: #00cc00;
+ 
+}
+    </style>
+
+    <script>
+        function Purchase(){  //keeps appearing at the first purchase button
+            var quantity1 = document.getElementById("quantity1");
+            var quantity2 = document.getElementById("quantity2");
+            var quantity3 = document.getElementById("quantity3");
+            var output = document.getElementById("output");
+            var subtotal  = parseFloat(quantity1.value * 299.99) + parseFloat(quantity2.value * 499.99) + parseFloat(quantity3.value * 799.99);
+            var companysubtotal = parseFloat(quantity1.value * 199.99) + parseFloat(quantity2.value * 300) + parseFloat(quantity3.value * 699);
+            var profit = subtotal - companysubtotal;
+            var itemsold = parseInt(quantity1.value) + parseInt(quantity2.value) + parseInt(quantity3.value); //a bit confused here
+            console.log("Company profit is " + profit + " Items We Sold" + itemsold);
+            var tax = subtotal * 0.0875;
+            var total = subtotal + tax; 
+            var shipping
+            
+            var build = "The Total Cost is: $" + total
+            ;
+            if (total >=600){
+                build += "  Shipping costs: $25   "
+            }else if(total >= 500 && total <=900){
+                build += "  Shipping cost: $50"
+            }else if (total >=1000){
+                build +="Free"
+            }
+                build += "Subtotal: $" + subtotal + "<br>" ;
+                build += "Tax: $" + tax + "<br>"; 
+                build += "------------------------- <br>";
+                build += "Total: $" + total + "<br>";//needs to be rounded to nearest hundreth
+            output.innerHTML = build;
+
+
+
+        }
+    </script>
+
+    </head>
+
+    <body>
+        <div>
+            <h2> Razer Toaster </h2> 
+            <img src= "project img\razertoaster.jpg"><br>
+            <span>$299.99</span>
+            <p>
+                A toaster that will imprint the Razer logo on it. Comes with USB ports on the side for convenient charging. RGB butter will come soon!
+            </p>
+            <input id = "quantity1" type = "text">
+        </div>
+        <button onclick = "Purchase();">
+             Purchase
+        </button>
+        <div id = "output"> </div>
+
+        <div>
+            <h2> Razer Project McFly </h2> 
+            <img src= "project img\projectmcfly.jpg"><br>
+            <span>$499.99</span>
+            <p>
+                The future is here! This mouse will have no friction as it floats in the air. Elevate your game. 
+            </p>
+            <input id = "quantity2" type = "text">
+        </div>
+        <button onclick = "Purchase();">
+            Purchase
+        </button>
+        <div id = "output"> </div>
+
+        <div>
+            <h2> Razer Phone </h2> 
+            <img src= "project img\razerphone.jpg"><br>
+            <span>$799.99</span>
+            <p>
+                Razer is now in the phone industry. This phone can have to a 120 hz refresh rate. The battery is a 4000 ion-lithium battery so it won't die. Partnered with Dolby Audio to bring you the best sound quality. For the best gaming experience on your phone.
+            </p>
+            <input id = "quantity3" type = "text">
+        </div>
+        <button onclick = "Purchase();">
+            Purchase
+        </button>
+        <div id = "output"> </div>
+
+    </body>
+</html>
