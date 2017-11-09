@@ -41,10 +41,10 @@
             }else if (total >=1000){
                 build +="Free"
             }
-                build += "Subtotal: $" + subtotal + "<br>" ;
-                build += "Tax: $" + tax + "<br>"; 
+                build += "Subtotal: $" + subtotal.toFixed(2) + "<br>" ;
+                build += "Tax: $" + tax.toFixed(2) + "<br>"; 
                 build += "------------------------- <br>";
-                build += "Total: $" + total + "<br>";//needs to be rounded to nearest hundreth
+                build += "Total: $" + total.toFixed(2) + "<br>";//needs to be rounded to nearest hundreth
             output.innerHTML = build;
 
 
