@@ -26,7 +26,7 @@
             var subtotal  = parseFloat(quantity1.value * 299.99) + parseFloat(quantity2.value * 499.99) + parseFloat(quantity3.value * 799.99);
             var companysubtotal = parseFloat(quantity1.value * 199.99) + parseFloat(quantity2.value * 300) + parseFloat(quantity3.value * 699);
             var profit = subtotal - companysubtotal;
-            var itemsold = parseInt(quantity1.value) + parseInt(quantity2.value) + parseInt(quantity3.value); //a bit confused here
+            var itemsold = parseInt(quantity1.value) + parseInt(quantity2.value) + parseInt(quantity3.value);
             console.log("Company profit is " + profit + " Items We Sold" + itemsold);
             var tax = subtotal * 0.0875;
             var total = subtotal + tax; 
